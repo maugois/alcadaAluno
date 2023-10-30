@@ -15,10 +15,11 @@ CREATE SCHEMA IF NOT EXISTS `alcadaAluno` DEFAULT CHARACTER SET utf8 ;
 USE `alcadaAluno` ;
 
 -- -----------------------------------------------------
--- Table `alcadaAluno`.`Aluno`
+-- Table `alcadaAluno`.`Alunos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Aluno` (
+CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Alunos` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `ra` VARCHAR(20) NOT NULL,
   `nome` VARCHAR(100) NOT NULL,
   `rg` VARCHAR(12) NOT NULL,
   `cpf` VARCHAR(14) NOT NULL,
@@ -29,15 +30,17 @@ CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Aluno` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   UNIQUE INDEX `rg_UNIQUE` (`rg` ASC) VISIBLE,
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  UNIQUE INDEX `ra_UNIQUE` (`ra` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `alcadaAluno`.`Aluno_img`
+-- Table `alcadaAluno`.`Alunos_img`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Aluno_img` (
+CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Alunos_img` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `ra` VARCHAR(20) NOT NULL,
   `nome` VARCHAR(100) NOT NULL,
   `rg` VARCHAR(12) NOT NULL,
   `cpf` VARCHAR(14) NOT NULL,
@@ -49,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `alcadaAluno`.`Aluno_img` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   UNIQUE INDEX `rg_UNIQUE` (`rg` ASC) VISIBLE,
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  UNIQUE INDEX `ra_UNIQUE` (`ra` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
